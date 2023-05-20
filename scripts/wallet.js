@@ -1,4 +1,5 @@
 
+
 class Wallet {
     constructor(id, name, transactions = []) {
         this.id = id;
@@ -8,11 +9,14 @@ class Wallet {
     }
 
     addTransaction(transaction) {
+
+        // check if transaction.name is exists or not
         for (let i = 0; i < this.transactions.length; ++i) {
             if (this.transactions[i].name == transaction.name) {
                 return false;
             }
         }
+        // store new transaction
         this.transactions.push(transaction);
         return true;
     }

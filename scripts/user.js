@@ -15,28 +15,36 @@ class User {
     }
 
     createWallet(wallet_name, transactions = []) {
+        // check if "new wallet"'s name is exists or not
         for (let i = 0; i < this.wallets.length; ++i) {
             if (this.wallets[i].name === wallet_name) {
                 return false;
             }
         }
+        // create new wallet
         let new_wallet = new Wallet(
             this.wallets.length,
             wallet_name,
             transactions);
+        // store new wallet
         this.wallets.push(new_wallet);
-        this.switchWallet(0);
+        // switch to newest wallet (temporary)
+        this.switchWallet(this.wallets.length - 1);
         return true;
     }
 
+    // switch on-working wallet of user
     switchWallet(wallet_idx) {
         this.curr_wallet_idx = wallet_idx;
     }
 
     createTransaction(name, amount, category) {
+        // only create new transaction if there is a wallet to store it
         if (this.curr_wallet_idx == -1) {
             return false;
         }
+        // status == true: create successfully
+        // else: some errors occur
         let status = this.wallets[this.curr_wallet_idx].addTransaction(
             new Transaction(name, amount, category)
         );

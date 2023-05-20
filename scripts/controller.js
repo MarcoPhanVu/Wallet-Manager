@@ -12,30 +12,37 @@ class Controller {
     }
 
     createTransaction(name, amount, category) {
+        // only accept creating process if any user signs in
         if (this.current_user == -1) {
             return false;
         }
+        // return status of creating new transaction
         return this.users[this.current_user].createTransaction(name, amount, category);
     }
 
     createWallet(name) {
+        // only create wallet if any user signs in
         if (this.current_user == -1) {
             return false;
         }
+        // return status of creating new wallet
         return this.users[this.current_user].createWallet(name);
     }
 
     signIn(name, pass) {
+        // check password if exist user in database having the same name
         for (let i = 0; i < this.users.length; ++i) {
             if (this.users[i].name == name && this.users[i].login(pass)) {
                 this.current_user = i;
                 return true;
             }
         }
+        // if user's name does not exist in db, sign in fail
         return false;
     }
 
     signUp(name, pass) {
+        // sign up if no user with the same name in db
         for (let i = 0; i < this.users.length; ++i) {
             if (this.users[i].name == name) {
                 return false;
@@ -48,6 +55,7 @@ class Controller {
         return true;
     }
 
+    // read data (users) in db
     readData() {
         console.log(db);
         console.log("Read successfully");
@@ -71,6 +79,7 @@ class Controller {
         }
     }
 
+    // write new data into db
     write_data() {
         console.log("call write_data()");
     }

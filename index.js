@@ -2,7 +2,6 @@ import Controller from "./scripts/controller.js"
 // import CryptoJS from "./node_modules/crypto-js/crypto-js.js";
 
 let controller = new Controller();
-console.log(controller);
 let sign_in = false;
 
 const sign_in_btn = document.getElementById('sign-in-btn');
@@ -24,7 +23,6 @@ const log = document.getElementById('log');
 
 sign_in_btn.addEventListener("click", () => {
 
-    // console.log("SIGN-IN-CLICK");
     err.innerText = "";
     res.innerText = "";
     log.innerText = "";
@@ -147,7 +145,7 @@ show_my_information.addEventListener("click", () => {
     err.innerText = "";
     res.innerText = "";
     log.innerText = "";
-    
+
     if (sign_in == false) {
         err.innerText = "anonymous user";
     }
