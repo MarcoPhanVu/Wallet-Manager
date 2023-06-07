@@ -1,3 +1,6 @@
-
-
 [11:00pm - May 20th, 2023]: Checking Híu's first commit. Restructured it and had some experiments.
+
+
+[11:45pm - Jun 7th, 2023]: Return to the project and prepare to rebuild the page's structure.
+
+[12:15am - Jun 8th, 2023]: Changed my mind, working on establishing the database.
