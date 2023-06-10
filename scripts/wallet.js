@@ -1,5 +1,3 @@
-
-
 class Wallet {
     constructor(id, name, transactions = []) {
         this.id = id;
