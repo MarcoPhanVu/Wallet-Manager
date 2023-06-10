@@ -7,47 +7,61 @@ CREATE TABLE users (
 	name VARCHAR(100),
 	password VARCHAR(255),
 	PRIMARY KEY (userID)
+    -- All CONSTRAINT of PK always named "PRIMARY"
 );
 
 CREATE TABLE wallets (
 	walletID VARCHAR(255) NOT NULL,
 	name VARCHAR(100),
-	amount DECIMAL(64, 2),
+	amount DECIMAL(36, 2),
 	PRIMARY KEY (walletID),
 
 	userID VARCHAR(255) NOT NULL,
-	FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE
+	CONSTRAINT fk_userID_w FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE
 );
 
 CREATE TABLE categories (
 	categoryID VARCHAR(255) NOT NULL,
 	name VARCHAR(100),
 	description TEXT,
-	budget DECIMAL(64, 2),
+	budget DECIMAL(36, 2),
 	PRIMARY KEY (categoryID),
 	
 	userID VARCHAR(255),
-	FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE
+	CONSTRAINT fk_userID_c FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE
 );
 
 CREATE TABLE wallet_category ( -- (many to many relationship)
 	walletID VARCHAR(255),
 	categoryID VARCHAR(255),
-	FOREIGN KEY(walletID) REFERENCES wallets(walletID),
-	FOREIGN KEY(categoryID) REFERENCES categories(categoryID)
+	CONSTRAINT fk_walletID_wc FOREIGN KEY(walletID) REFERENCES wallets(walletID),
+	CONSTRAINT fk_categoryID_wc FOREIGN KEY(categoryID) REFERENCES categories(categoryID)
 );
 
-EXPLAIN users;
-EXPLAIN wallets;
-EXPLAIN catergories;
-EXPLAIN wallet_category;
+ALTER TABLE wallet_category ADD COLUMN connectionID INT(10) PRIMARY KEY;
+
+CREATE TABLE transactions (
+	transactionID VARCHAR(255),
+	amount decimal(36, 2),
+	description TEXT,
+	date DATE,
+	PRIMARY KEY (transactionID),
+
+	-- userID VARCHAR(255), no need because wallet and category already linked to the user
+	walletID VARCHAR(255),
+	categoryID VARCHAR(255),
+	CONSTRAINT fk_walletID_t FOREIGN KEY(walletID) REFERENCES wallets(walletID),
+	CONSTRAINT fk_categoryID_t FOREIGN KEY(categoryID) REFERENCES categories(categoryID)
+);
+
+DESCRIBE transactions;
 
 INSERT INTO users (userID, name, password) 
 VALUES 
-	("devHiu",		"Híu",			"Hiupass"),
-	("devGau",		"Gâu",			"Gaupass"),
-	("devMeu",		"Meu",			"Meupass"),
-	("devEng",		"Én",			"Enpass")
+	("devHiu",		"Híu",		"Hiupass"),
+	("devGau",		"Gâu",		"Gaupass"),
+	("devMeu",		"Meu",		"Meupass"),
+	("devEng",		"Én",		"Enpass")
 ;
 
 INSERT INTO wallets (walletID, name, amount, userID) 
@@ -73,47 +87,44 @@ VALUES
 
 
 -- Hiện tại là các users có thể access toàn bộ categories
-INSERT INTO wallet_category (walletID, categoryID)
+INSERT INTO wallet_category (connectionID, walletID, categoryID)
 VALUES
-	("devHiu_w0", 		"cat_food"),
-	("devHiu_w0", 		"cat_edu"),
-	("devHiu_w0", 		"cat_bill"),
-	("devHiu_w0", 		"cat_fun"),
-	("devHiu_w0", 		"cat_upcorner"),
-	("devHiu_w0", 		"cat_invest"),
-
-	("devGau_w0", 		"cat_food"),
-	("devGau_w0", 		"cat_snack"),
-	("devGau_w0", 		"cat_edu"),
-	("devGau_w0", 		"cat_bill"),
-	("devGau_w0", 		"cat_fun"),
-	("devGau_w0", 		"cat_lend"),
-
-	("devMeu_w0", 		"cat_food"),
-	("devMeu_w0", 		"cat_snack"),
-	("devMeu_w0", 		"cat_fun"),
-	("devMeu_w0", 		"cat_upcorner"),
-	("devMeu_w0", 		"cat_invest"),
-
-	("devEng_w0", 		"cat_food"),
-	("devEng_w0", 		"cat_edu"),
-	("devEng_w0", 		"cat_fun"),
-	("devEng_w0", 		"cat_invest"),
-	("devEng_w0", 		"cat_donate")
-;
+	("1", 		"devHiu_w0", 		"cat_food"),
+	("2", 		"devHiu_w0", 		"cat_edu"),
+	("3", 		"devHiu_w0", 		"cat_bill"),
+	("4", 		"devHiu_w0", 		"cat_fun"),
+	("5", 		"devHiu_w0", 		"cat_upcorner"),
+	("6", 		"devHiu_w0", 		"cat_invest"),
+	("7", 		"devGau_w0", 		"cat_food"),
+	("8", 		"devGau_w0", 		"cat_snack"),
+	("9", 		"devGau_w0", 		"cat_edu"),
+	("10", 		"devGau_w0", 		"cat_bill"),
+	("11", 		"devGau_w0", 		"cat_fun"),
+	("12", 		"devGau_w0", 		"cat_lend"),
+	("13", 		"devMeu_w0", 		"cat_food"),
+	("14", 		"devMeu_w0", 		"cat_snack"),
+	("15", 		"devMeu_w0", 		"cat_fun"),
+	("16", 		"devMeu_w0", 		"cat_upcorner"),
+	("17", 		"devMeu_w0", 		"cat_invest"),
+	("18", 		"devEng_w0", 		"cat_food"),
+	("19", 		"devEng_w0", 		"cat_edu"),
+	("20", 		"devEng_w0", 		"cat_fun"),
+	("21", 		"devEng_w0", 		"cat_invest"),
+	("22", 		"devEng_w0", 		"cat_donate")
+;		
 
 
 
 -- ALTER TABLE categories MODIFY COLUMN categoryID VARCHAR (255) NOT NULL;
 -- ALTER TABLE wallets ADD FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE;
--- ALTER TABLE categories ADD FOREIGN KEY (userID) REFERENCES users(userID) ON DELETE CASCADE;
 
 -- DELETE FROM users;
 -- DELETE FROM wallets;
 -- DELETE FROM categories;
 -- DELETE FROM wallet_category;
 
--- DROP TABLE users;
+-- Gotta drop from child
+-- DROP TABLE wallet_category;
 -- DROP TABLE wallets;
 -- DROP TABLE categories;
--- DROP TABLE wallet_category;
+-- DROP TABLE users;
