@@ -1,5 +1,3 @@
-<!-- <?php include "../components/header_server.php" ?> -->
-
 <?php 
 	// ADD USER
 

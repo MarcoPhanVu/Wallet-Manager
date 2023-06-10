@@ -1,5 +1,3 @@
-<!-- <?php include "../components/header_server.php" ?> -->
-
 <?php 
 	// ADD USER
 
@@ -10,9 +8,10 @@
 	$users_list = mysqli_fetch_all($user_query_result, MYSQLI_ASSOC);
 ?>
 
+<!-- DISPLAYING TABLE ON THIS PAGE WILL BE PLAIN AND NAIVE SO FUTURE ME OR THE OTHERS CAN READ AND UNDERSTAND THE BASIC OF THESE DISPLAYS -->
 
 <table class="object-list">
-	<caption>Wallets List</caption>
+	<caption>Users List</caption>
 	<thead>
 		<tr style="border: 3px solid rgb(11, 79, 73);">
 			<th>userID</th>

@@ -9,5 +9,8 @@
 </head>
 <body>
     <?php include "../servers/connection.php" ?>
-    <p>HEADER SHOWED</p>
-    <a href="../index.php">Back to Home page</a>
+    <header class="admin-header">
+        <a href="../index.php">Back to Home page</a>
+        <a href="./alter_all.php">Alter Database</a>
+        <a href="./display_all.php">Show Database</a>
+    </header>
