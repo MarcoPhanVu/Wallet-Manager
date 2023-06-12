@@ -1,13 +1,18 @@
 <?php include "../components/header_server.php" ?>
 
 <section class="display_info">
-    <br>
-    <?php include "./display/display_user.php" ?>
-    <?php include "./display/display_wallet.php" ?>
-    <?php include "./display/display_wallet_category.php" ?>
-    <br>
-    <?php include "./display/display_category.php" ?>
-    <?php include "./display/display_transaction.php" ?>
+    <?php 
+        $target_table = "users";
+        include "./display/display_data.php";
+        $target_table = "wallets";
+        include "./display/display_data.php";
+        $target_table = "wallet_category";
+        include "./display/display_data.php";
+        $target_table = "categories";
+        include "./display/display_data.php";
+        $target_table = "transactions";
+        include "./display/display_data.php";
+    ?>
 </section>
     
 <?php include "../components/footer_server.php" ?>

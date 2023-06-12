@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php include "./servers/connection.php"?>
-    <a href="./servers/display_user.php">To display</a>
+    <a href="./servers/display_all.php">To display</a>
     <h1>Welcome to HAM TRU AN</h1>
     <div style="width: 100vw;">
         <div style="width: 50%; float: left">
