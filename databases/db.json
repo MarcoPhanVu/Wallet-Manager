@@ -1,0 +1,16 @@
+[
+    {
+        "id": 0,
+        "name": "admin",
+        "wallets": [
+            {
+                "id": 0,
+                "name": "Default-wallet",
+                "amount": 0,
+                "transactions": []
+            }
+        ],
+        "curr_wallet_idx": 0,
+        "password": "123"
+    }
+]
