@@ -6,8 +6,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     border-collapse: collapse;
+}
+
+:root {
+    --dark: #0d0d0d;
+    --light: #e4e4e4;
 }
 
 html {
@@ -27,6 +32,28 @@ body {
     text-align: center;
 }
 
+.salmon {
+    background-color: salmon;
+    color: #fff;
+}
+
+.notYet {
+    position: relative;
+}
+
+.notYet:hover:after {
+    content: "This function is not yet supported";
+    position: absolute;
+    z-index: 10;
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 4px;
+    width: 240px;
+    font-size: 14px;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -32px;
+}
 
 
 .display_info {
@@ -76,4 +103,74 @@ table.data-table > tbody > tr > td {
 
 table.data-table .action-btn {
     padding: 4px 8px;
+}
+
+.form-container {
+    position: relative;
+    background-color: beige;
+    width: 75%;
+    padding: 16px;
+    padding-top: 64px;
+    margin: 48px auto;
+}
+
+.form-container .title {
+    position: absolute;
+    margin: 16px auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    width: 100%;
+}
+
+.form-container form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+.form-container form fieldset {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    grid-column: auto;
+    grid-row: span 4;
+    gap: 8px;
+}
+
+.form-container form fieldset legend {
+    padding: 0 6px;
+}
+
+.form-container form input,
+.form-container form textarea {
+    min-height: 20px;
+    padding: 8px;
+}
+
+.form-container form fieldset.ext-info label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.form-container form label > input,
+.form-container form label > textarea {
+
+}
+
+.form-container form .bottom-right {
+    background-color: antiquewhite;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.form-container form input.btn {
+    position: relative;
 }

@@ -8,8 +8,6 @@
 		$column_field_name_result = mysqli_query($connection, $column_field_name_query);
 	}
 
-
-
 	$data_query_result = mysqli_query($connection, $data_query);
 	$data_list = mysqli_fetch_all($data_query_result, MYSQLI_ASSOC);
 
@@ -70,8 +68,8 @@
 						<td><?php echo $data[$key]; ?></td>
 					<?php endforeach; ?>
 					<td>
-						<button class="action-btn edit">Edit</button>
-						<button class="action-btn delete">Delete</button>
+						<button class="action-btn edit notYet">Edit</button>
+						<button class="action-btn delete notYet">Delete</button>
 					</td>
 				</tr>
 			<?php endforeach; ?>

@@ -9,4 +9,10 @@
 
 [Jun 9th, 2023]: Able to display the databases.
 
-[10:30th - Jun 10th, 2023]: Alter databases.
+[10:30pm - Jun 10th, 2023]: Display databases dynamically.
+
+[10:00pm - Jun 14th, 2023]: Considering Node.js.
+
+[3:00pm - Jun 15th, 2023]: Nah fuck it, we'll use jQuery.
+
+[9:30pm - Jun 17th, 2023]: Getting back on inserting transactions into DB.
