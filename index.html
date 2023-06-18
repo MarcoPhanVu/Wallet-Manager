@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="app">
+        <div class="sidebar">
+            <div class="title sidebar-item">
+                <span class="title-icon icon"></span>
+                <h1 class="title-name">Dashboard</h1>
+            </div>
+            <div class="sidebar-item sidebar-item_mainWallet">
+                <span class="mainWallet-icon icon"></span>
+                <span class="mainWallet-txt txt">Main Wallet</span>
+                <span class="mainWallet-adjustingIcon icon"></span>
+            </div>
+            <div class="sidebar-item sidebar-item_shopee">
+                <span class="icon"></span>
+                <span class="txt">Shopee</span>
+            </div>
+            <button class="sidebar-item addWallet">
+                <span class="addWalletIcon icon"></span>
+            </button>
+        </div>
+        
+                
+        <div class="rightApp">
+            <div class="header">
+                <div class="header-right analyst-icon icon"></div>
+                <div class="header-left">
+                    <span class="lang icon"></span>
+                    <span class="learnMore icon"></span>
+                    <span class="icon theme"></span>
+                    <span class="icon notification"></span>
+                    <span class="icon user"></span>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div class="transactions">
+                    <div class="transactions-head">
+                        <h1 class="transactions-title head-left transactions-head-right">Transactions</h1>
+                        <div class="head-right">
+                            <select class="timeSelection">Past month</select>
+                            <button class="addTransactionIcon icon"></button>
+                        </div>
+                    </div>
+                    
+                    <!--List item-->
+                    <ul class="transactions-list">
+                        <li class="transactions-item">
+                            <div class="transaction-icon icon "></div>
+                            <div class="transaction-content">
+                                <h2 class="transaction-title">Shopee</h2>
+                                <p class="transaction-time">Sunday, June 18, 2023 </p>
+                            </div>
+                            <div class="transaction-money">325,000đ</div>
+                        </li>
+                        <li class="transactions-item">
+                            <div class="transaction-icon icon "></div>
+                            <div class="transaction-content">
+                                <h2 class="transaction-title">Vegetables</h2>
+                                <p class="transaction-time">Sunday, June 18, 2023 </p>
+                            </div>
+                            <div class="transaction-money">325,000đ</div>
+                        </li>
+                    </ul>
+                
+                </div>
+                
+                <div class="analyst">
+                    <div class="analyst-head">
+                        <h1 class="analyst-title head-left">Analyst</h1>
+                        <select class="timeSelection head-right analyst-head-right">Past month</select>
+                    </div>
+                    
+                    <div class="mainWallet-card">
+                        <div class="mainWallet-right card-right">
+                            <span class="icon"></span>
+                            <h2 class="mainWallet-title">Main Wallet</h2>
+                            <span class="cmt">Current wallet</span>
+                        </div>
+                        <div class="mainWallet-left card-left">
+                            <span class="mainWallet-balance">Balance</span>
+                            <span class="amountMoney">24,150,000đ</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="cards">
+                        <div class="card income">
+                            <div class="income-above card-above">
+                                <span class="icon"></span>
+                                <h2 class="income-title">Income</h2>
+                                <span class="cmt">Current wallet</span>
+                            </div>
+                            <div class="income-below card-below">
+                                <div class="income-percentage card-percentage">
+                                    <span class="icon"></span>
+                                    20,7%
+                                </div>
+                                <span class="amountMoney">24,150,000đ</span>
+                            </div>  
+                        </div>
+                        <div class="card outcome">
+                            <div class="outcome-above card-above">
+                                <span class="icon"></span>
+                                <h2 class="outcome-title">Outcome</h2>
+                                <span class="cmt">Current wallet</span>
+                            </div>
+                            <div class="outcome-below card-below">
+                                <div class="outcome-percentage card-percentage">
+                                    <span class="icon"></span>
+                                    20,7%
+                                </div>
+                                <span class="amountMoney">24,150,000đ</span>
+                            </div>  
+                        </div>
+                        <div class="card debt">
+                            <div class="debt-above card-above">
+                                <span class="icon"></span>
+                                <h2 class="debt-title">Debt</h2>
+                                <span class="cmt">Current wallet</span>
+                            </div>
+                            <div class="debt-below card-below">
+                                <div class="debt-percentage card-percentage">
+                                    <span class="icon"></span>
+                                    20,7%
+                                </div>
+                                <span class="amountMoney">24,150,000đ</span>
+                            </div>  
+                        </div> 
+                        <div class="card debtCollection">
+                            <div class="debtCollection-above card-above">
+                                <span class="icon"></span>
+                                <h2 class="debtCollection-title">Debt Collection</h2>
+                                <span class="cmt">Current wallet</span>
+                            </div>
+                            <div class="debtCollection-below card-below">
+                                <div class="debtCollection-percentage card-percentage">
+                                    <span class="icon"></span>
+                                    20,7%
+                                </div>
+                                <span class="amountMoney">24,150,000đ</span>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
