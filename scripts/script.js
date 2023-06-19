@@ -1,4 +1,6 @@
-console.log("Checking");
+console.log("Currently working");
+
+let jsDate = document.getElementById("transaction-date");
 
 $(document).ready(function() {
 	let dis = $("#display-num");
@@ -22,4 +24,7 @@ $(document).ready(function() {
 		console.log("decreasing by 1-ed");
 		$("display-num").value -= 1;
 	});
+
+
+	// Date.prototype.toDateInputValue =
 });

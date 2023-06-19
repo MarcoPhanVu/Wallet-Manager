@@ -174,3 +174,7 @@ table.data-table .action-btn {
 .form-container form input.btn {
     position: relative;
 }
+
+.form-container form .warning {
+    color: rgb(255, 85, 85);
+}
