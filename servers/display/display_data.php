@@ -70,6 +70,7 @@
 					<td>
 						<button class="action-btn edit notYet">Edit</button>
 						<button class="action-btn delete notYet">Delete</button>
+						<!-- THIS SHIT GONNA NEED AJAX -->
 					</td>
 				</tr>
 			<?php endforeach; ?>

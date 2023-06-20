@@ -15,16 +15,5 @@ $(document).ready(function() {
 		dis.fadeTo(1000, 0.5);
 	});
 
-	$("#increase-num").click(function() {
-		console.log("increasing by 1-ed");
-		$("display-num").value += 1;
-	});
-
-	$("#decrease-num").click(function() {
-		console.log("decreasing by 1-ed");
-		$("display-num").value -= 1;
-	});
-
-
 	// Date.prototype.toDateInputValue =
 });

@@ -1,7 +1,7 @@
 <?php include "../components/header_server.php" ?>
 
 <?php
-    session_start();
+    // session_start();
     $_SESSION["session_variable"] = "variable at display all";
     echo $_SESSION["session_variable"];
 ?>
