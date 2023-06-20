@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    $currentUserID = "devGau";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
