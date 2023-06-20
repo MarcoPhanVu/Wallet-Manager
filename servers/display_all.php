@@ -1,5 +1,11 @@
 <?php include "../components/header_server.php" ?>
 
+<?php
+    // session_start();
+    $_SESSION["session_variable"] = "variable at display all";
+    echo $_SESSION["session_variable"];
+?>
+
 <section class="display_info">
     <?php 
         echo '<div class="checker hidden"></div>';
@@ -15,7 +21,7 @@
         echo '</div>';
 
 
-        echo '<div class="same-row hidden">';
+        echo '<div class="same-row">';
         $target_table = "wallet_category";
         include "./display/display_data.php";
 
@@ -24,7 +30,7 @@
         include "./display/display_data.php";
         echo '</div>';
 
-        echo '<div class="hidden">';
+        echo '<div class="">';
         $target_table = "transactions";
         include "./display/display_data.php";
         echo '</div>';
