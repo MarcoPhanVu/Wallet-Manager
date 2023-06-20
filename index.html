@@ -6,25 +6,37 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="app">
         <div class="sidebar">
             <div class="title sidebar-item">
-                <span class="title-icon icon"></span>
+                <span class="title-icon icon">
+                    <span class="material-symbols-outlined" style="font-size: 2em;">dashboard</span>
+                </span>
                 <h1 class="title-name">Dashboard</h1>
             </div>
             <div class="sidebar-item sidebar-item_mainWallet">
-                <span class="mainWallet-icon icon"></span>
-                <span class="mainWallet-txt txt">Main Wallet</span>
+                <span class="mainWallet-icon icon">
+                    <span class="material-symbols-outlined">wallet</span>
+                </span>
+                <h2 class="mainWallet-txt txt">Main Wallet</h2>
                 <span class="mainWallet-adjustingIcon icon"></span>
             </div>
+            
+            <!--List all wallets were created by user.-->
             <div class="sidebar-item sidebar-item_shopee">
-                <span class="icon"></span>
-                <span class="txt">Shopee</span>
+                <span class="icon">
+                    <span class="material-symbols-outlined">trolley</span>
+                </span>
+                <h2 class="txt">Shopee</h2>
             </div>
+            
             <button class="sidebar-item addWallet">
-                <span class="addWalletIcon icon"></span>
+                <span class="addWalletIcon icon">
+                    <span class="material-symbols-outlined">add</span>
+                </span>
             </button>
         </div>
         
