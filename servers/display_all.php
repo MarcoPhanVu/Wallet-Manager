@@ -1,13 +1,55 @@
 <?php include "../components/header_server.php" ?>
 
+<?php
+    // session_start();
+    $_SESSION["session_variable"] = "variable at display all";
+    echo $_SESSION["session_variable"];
+?>
+
 <section class="display_info">
-    <br>
-    <?php include "./display/display_user.php" ?>
-    <?php include "./display/display_wallet.php" ?>
-    <?php include "./display/display_wallet_category.php" ?>
-    <br>
-    <?php include "./display/display_category.php" ?>
-    <?php include "./display/display_transaction.php" ?>
+    <?php 
+        echo '<div class="checker hidden"></div>';
+        $target_table_size = ""; // remember to delete this if unecessary
+
+
+        echo '<div class="same-row">';
+        $target_table = "users";
+        include "./display/display_data.php";
+
+        $target_table = "wallets";
+        include "./display/display_data.php";
+        echo '</div>';
+
+
+        echo '<div class="same-row">';
+        $target_table = "wallet_category";
+        include "./display/display_data.php";
+
+        $target_table = "categories";
+        // $custom_query = "SELECT * FROM wallet_category";
+        include "./display/display_data.php";
+        echo '</div>';
+
+        echo '<div class="">';
+        $target_table = "transactions";
+        include "./display/display_data.php";
+        echo '</div>';
+
+        $target_table = "users"; // TEMP BECAUSE THIS'LL BE CHANGE LATER
+        $custom_table_name = "user and wallet";
+        $custom_query = "SELECT 
+                            w.walletID,
+                            w.name AS wallet_name,
+                            w.amount,
+                            u.userID,
+                            u.name AS user_name
+                        FROM 
+                            wallets AS w 
+                        INNER JOIN 
+                            users AS u ON u.userID = w.userID
+        ";
+        include "./display/display_data.php";
+    ?>
 </section>
     
 <?php include "../components/footer_server.php" ?>
