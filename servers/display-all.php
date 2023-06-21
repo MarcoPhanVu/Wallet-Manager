@@ -14,25 +14,25 @@
 
         echo '<div class="same-row">';
         $target_table = "users";
-        include "./display/display_data.php";
+        include "./display/display-data.php";
 
         $target_table = "wallets";
-        include "./display/display_data.php";
+        include "./display/display-data.php";
         echo '</div>';
 
 
         echo '<div class="same-row">';
         $target_table = "wallet_category";
-        include "./display/display_data.php";
+        include "./display/display-data.php";
 
         $target_table = "categories";
         // $custom_query = "SELECT * FROM wallet_category";
-        include "./display/display_data.php";
+        include "./display/display-data.php";
         echo '</div>';
 
         echo '<div class="">';
         $target_table = "transactions";
-        include "./display/display_data.php";
+        include "./display/display-data.php";
         echo '</div>';
 
         $target_table = "users"; // TEMP BECAUSE THIS'LL BE CHANGE LATER
@@ -48,7 +48,7 @@
                         INNER JOIN 
                             users AS u ON u.userID = w.userID
         ";
-        include "./display/display_data.php";
+        include "./display/display-data.php";
     ?>
 </section>
     

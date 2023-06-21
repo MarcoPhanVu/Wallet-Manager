@@ -12,7 +12,11 @@
 	$data_list = mysqli_fetch_all($data_query_result, MYSQLI_ASSOC);
 
 
-    $target_table_size = @$target_table_size;
+	if (isset($target_table_size)) {
+		$target_table_size = @$target_table_size;
+	} else {
+		$target_table_size = 1;
+	}
 	// $column_field_name_result = $connection -> query($column_field_name_query); These are the same shits
 ?>
 
