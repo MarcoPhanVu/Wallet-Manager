@@ -38,6 +38,7 @@ CREATE TABLE wallet_category ( -- (many to many relationship)
 	CONSTRAINT fk_categoryID_wc FOREIGN KEY(categoryID) REFERENCES categories(categoryID)
 );
 ALTER TABLE wallet_category ADD COLUMN connectionID INT(10) PRIMARY KEY; -- Leave it for future me to copy the syntax, nothing special;
+ALTER TABLE wallet_category MODIFY connectionID INT(10) FIRST;
 
 CREATE TABLE transactions (
 	transactionID VARCHAR(255),
