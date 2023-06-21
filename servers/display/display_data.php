@@ -64,12 +64,23 @@
 
 			<?php foreach ($data_list as $data): ?>
 				<tr>
-					<?php foreach (array_keys($data) as $key): ?>
-						<td><?php echo $data[$key]; ?></td>
-					<?php endforeach; ?>
+					<?php 
+						// print_r($data);
+						$countKey = 0;
+						$recordID = "";
+
+						foreach (array_keys($data) as $key) {
+							if ($countKey == 0) {
+								$recordID = $data[$key];
+								$countKey++;
+							}
+							echo "<td>$data[$key]</td>";
+						}
+					?>
+
 					<td>
 						<button class="action-btn edit notYet">Edit</button>
-						<button class="action-btn delete notYet">Delete</button>
+						<button class="action-btn delete notYet" <?php echo "data-table-id='" . $target_table . "' data-record-id='" . $recordID . "'"; ?>>Delete</button>
 						<!-- THIS SHIT GONNA NEED AJAX -->
 					</td>
 				</tr>
@@ -84,5 +95,7 @@
 		$custom_query = NULL;
 		$custom_table_name = NULL;
 		$column_count = 0;
+		$countKey = 0;
+		$recordID = NULL;
 	?>
 </div>
