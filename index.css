@@ -1,0 +1,147 @@
+@import url('https: //fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-size: 1.7em;
+}
+
+h2 {
+	font-size: 1.3em;
+}
+
+.app {
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+}
+
+
+/* SIDEBAR */
+.sidebar {
+	width: 70px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgb(214, 236, 235);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 0px 5px;
+	transition: 0.2s;
+}
+
+.sidebar-item {
+	padding: 0.8em;  
+	border-radius: 10px;
+	background-color: pink;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.title {
+	background-color: inherit;
+}
+
+
+.icon {
+	text-align: center;
+	
+}
+
+.title-icon {
+	display: flex;
+	/* flex-direction: column; */
+	align-items: center;
+}
+
+.title-name {
+	margin: 0;
+}
+
+.title-name, div.sidebar-item>.txt {
+	display: none;
+	overflow: hidden;
+}
+
+.sidebar-item_mainWallet {
+
+}
+
+.mainWallet-icon {
+
+}
+
+.mainWallet-txt {
+
+}
+
+.mainWallet-adjustingIcon {
+
+}
+
+.sidebar-item_shopee {
+
+}
+
+.sidebar-item.addWallet {
+	display: flex;
+	border: none;
+	padding: auto 0;  
+}
+
+.addWalletIcon {
+	font-size: 2em;
+	margin: auto;
+	border-radius: 10px;
+	display: flex;
+}
+
+/*When sidebar is hovered*/
+.sidebar:hover {
+	width: 250px;
+}
+
+.sidebar:hover .title-name {
+	display: block;
+}
+
+.sidebar:hover .sidebar-item>.txt {
+	display: block;
+}
+
+.sidebar:hover .sidebar-item {
+	justify-content: flex-start;
+}
+
+.sidebar:hover .addWallet {
+	align-self: flex-start;
+}
+
+.sidebar:hover span.icon {
+	margin: 0px 10px;
+}
+
+/* 
+rightApp
+header
+header-right
+analyst-icon
+header-left
+lang
+learnMore
+theme
+notification
+user
+content
+transactions
+transactions-head
+transactions-title */
