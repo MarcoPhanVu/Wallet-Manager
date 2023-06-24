@@ -5,6 +5,8 @@
 	define("DB_NAME", "wallet_manager");
 	define("DB_PORT", "2412");
 
+	define("SITEURL", "http://localhost/wallet-manager/");
+
 	$connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 
 	// Check connection

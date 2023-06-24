@@ -16,3 +16,7 @@
 [3:00pm - Jun 15th, 2023]: Nah fuck it, we'll use jQuery.
 
 [9:30pm - Jun 17th, 2023]: Getting back on inserting transactions into DB.
+
+[4:10pm - June 22nd, 2023]: Is this log necessary?
+
+[4:01pm - June 24th, 2023]: I guess not, so let's just get rid of it after the meeting.
