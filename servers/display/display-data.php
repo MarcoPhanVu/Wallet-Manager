@@ -12,7 +12,11 @@
 	$data_list = mysqli_fetch_all($data_query_result, MYSQLI_ASSOC);
 
 
-    $target_table_size = @$target_table_size;
+	if (isset($target_table_size)) {
+		$target_table_size = @$target_table_size;
+	} else {
+		$target_table_size = 1;
+	}
 	// $column_field_name_result = $connection -> query($column_field_name_query); These are the same shits
 ?>
 
@@ -64,12 +68,51 @@
 
 			<?php foreach ($data_list as $data): ?>
 				<tr>
-					<?php foreach (array_keys($data) as $key): ?>
-						<td><?php echo $data[$key]; ?></td>
-					<?php endforeach; ?>
-					<td>
+					<?php 
+						// print_r($data);
+						$countKey = 0;
+						$recordID = "";
+
+						foreach (array_keys($data) as $key) {
+							if ($countKey == 0) {
+								$recordID = $data[$key];
+								$countKey++;
+							}
+							echo "<td>$data[$key]</td>";
+						}
+					?>
+
+					<td style="display: flex; gap: 8px;">
+						<?php
+
+							// Different db have different deletes
+							$delete_page = SITEURL . "servers/alter/";
+							if ($target_table == "transactions") {
+								$delete_page = $delete_page . "delete-transaction.php";
+							} elseif (
+								$target_table == "categories" || 
+								$target_table == "wallets" || 
+								$target_table == "wallet_category") {
+
+								$delete_page = $delete_page . "delete-wallet_category.php";
+							} else {
+								$delete_page = $delete_page . "wtf-are-u-doing.php";
+							}
+						
+						?>
+						
 						<button class="action-btn edit notYet">Edit</button>
-						<button class="action-btn delete notYet">Delete</button>
+						<a 
+							href="<?php 
+								echo $delete_page . "?recordID=" . $recordID .
+								"&fromTable=" . $target_table . 
+								"&fromPage=display";
+							?>"
+							class="action-btn delete notYet"
+							data-table-id="<?php echo $target_table; ?>"
+							data-record-id="<?php echo $recordID; ?>"
+							>Delete
+						</a>
 						<!-- THIS SHIT GONNA NEED AJAX -->
 					</td>
 				</tr>
@@ -84,5 +127,8 @@
 		$custom_query = NULL;
 		$custom_table_name = NULL;
 		$column_count = 0;
+		$countKey = 0;
+		$recordID = NULL;
+		$delete_page = NULL;
 	?>
 </div>
