@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    $currentUserID = "devGau";
+    $_SESSION["currentUserID"] = "devGau";
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +19,6 @@
     <?php include "../servers/connection.php" ?>
     <?php
         // COMMON FUNCTIONS
-        function getFieldFromDB($field, $dbName) {
-            
-        }
     ?>
     <header class="admin-header">
         <a href="../index.php">Back to Home page</a>

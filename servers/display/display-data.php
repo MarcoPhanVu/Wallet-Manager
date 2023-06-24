@@ -82,9 +82,37 @@
 						}
 					?>
 
-					<td>
+					<td style="display: flex; gap: 8px;">
+						<?php
+
+							// Different db have different deletes
+							$delete_page = SITEURL . "servers/alter/";
+							if ($target_table == "transactions") {
+								$delete_page = $delete_page . "delete-transaction.php";
+							} elseif (
+								$target_table == "categories" || 
+								$target_table == "wallets" || 
+								$target_table == "wallet_category") {
+
+								$delete_page = $delete_page . "delete-wallet_category.php";
+							} else {
+								$delete_page = $delete_page . "wtf-are-u-doing.php";
+							}
+						
+						?>
+						
 						<button class="action-btn edit notYet">Edit</button>
-						<button class="action-btn delete notYet" <?php echo "data-table-id='" . $target_table . "' data-record-id='" . $recordID . "'"; ?>>Delete</button>
+						<a 
+							href="<?php 
+								echo $delete_page . "?recordID=" . $recordID .
+								"&fromTable=" . $target_table . 
+								"&fromPage=display";
+							?>"
+							class="action-btn delete notYet"
+							data-table-id="<?php echo $target_table; ?>"
+							data-record-id="<?php echo $recordID; ?>"
+							>Delete
+						</a>
 						<!-- THIS SHIT GONNA NEED AJAX -->
 					</td>
 				</tr>
@@ -101,5 +129,6 @@
 		$column_count = 0;
 		$countKey = 0;
 		$recordID = NULL;
+		$delete_page = NULL;
 	?>
 </div>

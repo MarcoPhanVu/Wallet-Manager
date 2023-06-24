@@ -56,6 +56,8 @@ body {
 }
 
 
+
+
 .display_info {
     display: flex;
     background-color: rgb(198, 207, 221);
@@ -103,7 +105,18 @@ table.data-table > tbody > tr > td {
 
 table.data-table .action-btn {
     padding: 4px 8px;
+    background-color: antiquewhite;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid #000;
 }
+
+
+
+
+
+
 
 .form-container {
     position: relative;
@@ -177,4 +190,8 @@ table.data-table .action-btn {
 
 .form-container form .warning {
     color: rgb(255, 85, 85);
+}
+
+.half-pane {
+    flex: 1;
 }
