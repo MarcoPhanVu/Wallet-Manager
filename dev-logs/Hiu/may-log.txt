@@ -1,4 +1,0 @@
-
-
-[4:00am May 19th, 2023]: Create demo version.
-[2:30am May 21th, 2023]: Create admin account; Comment code.
