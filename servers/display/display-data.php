@@ -26,7 +26,7 @@
 		<caption>
 			<?php 
 				if(isset($custom_table_name)) {
-					echo ucfirst($custom_table_name);
+					echo ucfirst($custom_table_name); // upper case first character
 				} else {
 					echo ucfirst($target_table);
 				}

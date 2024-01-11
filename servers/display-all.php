@@ -2,7 +2,7 @@
 
 <?php
     // session_start();
-    $_SESSION["session_variable"] = "variable at display all";
+    $_SESSION["session_variable"] = "Session variable, this is DISPLAY ALL PAGE";
     echo $_SESSION["session_variable"];
 ?>
 

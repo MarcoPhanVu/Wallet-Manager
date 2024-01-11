@@ -1,9 +1,9 @@
 <?php
 	define("DB_HOST", "localhost");
-	define("DB_USER", "marco");
-	define("DB_PASS", "marcopass");
+	define("DB_USER", "root");
+	define("DB_PASS", "");
 	define("DB_NAME", "wallet_manager");
-	define("DB_PORT", "2412");
+	define("DB_PORT", "3306");
 
 	define("SITEURL", "http://localhost/wallet-manager/");
 

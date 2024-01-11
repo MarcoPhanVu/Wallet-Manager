@@ -7,7 +7,7 @@ CREATE TABLE users (
 	name VARCHAR(100),
 	password VARCHAR(255),
 	PRIMARY KEY (userID)
-    -- All CONSTRAINT of PK always named "PRIMARY"
+	-- All CONSTRAINT of PK always named "PRIMARY"
 );
 
 CREATE TABLE wallets (
@@ -89,28 +89,28 @@ VALUES
 -- Hiện tại là các users có thể access toàn bộ categories
 INSERT INTO wallet_category (connectionID, walletID, categoryID)
 VALUES
-	("1", 		"devHiu_w0", 		"cat_food"),
-	("2", 		"devHiu_w0", 		"cat_edu"),
-	("3", 		"devHiu_w0", 		"cat_bill"),
-	("4", 		"devHiu_w0", 		"cat_fun"),
-	("5", 		"devHiu_w0", 		"cat_upcorner"),
-	("6", 		"devHiu_w0", 		"cat_invest"),
-	("7", 		"devGau_w0", 		"cat_food"),
-	("8", 		"devGau_w0", 		"cat_snack"),
-	("9", 		"devGau_w0", 		"cat_edu"),
-	("10", 		"devGau_w0", 		"cat_bill"),
-	("11", 		"devGau_w0", 		"cat_fun"),
-	("12", 		"devGau_w0", 		"cat_lend"),
-	("13", 		"devMeu_w0", 		"cat_food"),
-	("14", 		"devMeu_w0", 		"cat_snack"),
-	("15", 		"devMeu_w0", 		"cat_fun"),
-	("16", 		"devMeu_w0", 		"cat_upcorner"),
-	("17", 		"devMeu_w0", 		"cat_invest"),
-	("18", 		"devEng_w0", 		"cat_food"),
-	("19", 		"devEng_w0", 		"cat_edu"),
-	("20", 		"devEng_w0", 		"cat_fun"),
-	("21", 		"devEng_w0", 		"cat_invest"),
-	("22", 		"devEng_w0", 		"cat_donate")
+	("1",		"devHiu_w0",		"cat_food"),
+	("2",		"devHiu_w0",		"cat_edu"),
+	("3",		"devHiu_w0",		"cat_bill"),
+	("4",		"devHiu_w0",		"cat_fun"),
+	("5",		"devHiu_w0",		"cat_upcorner"),
+	("6",		"devHiu_w0",		"cat_invest"),
+	("7",		"devGau_w0",		"cat_food"),
+	("8",		"devGau_w0",		"cat_snack"),
+	("9",		"devGau_w0",		"cat_edu"),
+	("10",		"devGau_w0",		"cat_bill"),
+	("11",		"devGau_w0",		"cat_fun"),
+	("12",		"devGau_w0",		"cat_lend"),
+	("13",		"devMeu_w0",		"cat_food"),
+	("14",		"devMeu_w0",		"cat_snack"),
+	("15",		"devMeu_w0",		"cat_fun"),
+	("16",		"devMeu_w0",		"cat_upcorner"),
+	("17",		"devMeu_w0",		"cat_invest"),
+	("18",		"devEng_w0",		"cat_food"),
+	("19",		"devEng_w0",		"cat_edu"),
+	("20",		"devEng_w0",		"cat_fun"),
+	("21",		"devEng_w0",		"cat_invest"),
+	("22",		"devEng_w0",		"cat_donate")
 ;		
 
 
